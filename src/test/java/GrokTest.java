@@ -169,7 +169,7 @@ class GrokTest {
         try {
             Field fp = aGrok.getClass().getDeclaredField("powerLevel");
             fp.setAccessible(true);
-            aGrok.tookHit();
+            aGrok.tookHit(power);
             int actual = fp.getInt(aGrok);
             assertEquals(expected,actual,"Expected " + expected + " got "+ actual);
         } catch (IllegalAccessException | NoSuchFieldException e){
